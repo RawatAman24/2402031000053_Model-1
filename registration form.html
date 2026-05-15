@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Validation</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Student Registration Form</h1>
+    </header>
+
+    <main>
+
+        <form>
+
+            <!-- First Name -->
+            <label for="fname">First Name:</label><br>
+            <input 
+                type="text"
+                id="fname"
+                name="fname"
+                required
+                pattern="[A-Za-z]{2,20}"
+                placeholder="Enter first name">
+            <br><br>
+
+            <!-- Last Name -->
+            <label for="lname">Last Name:</label><br>
+            <input 
+                type="text"
+                id="lname"
+                name="lname"
+                required
+                pattern="[A-Za-z]{2,20}"
+                placeholder="Enter last name">
+            <br><br>
+
+            <!-- Contact Number -->
+            <label for="contact">Contact Number:</label><br>
+            <input 
+                type="tel"
+                id="contact"
+                name="contact"
+                required
+                pattern="[0-9]{10}"
+                placeholder="10 digit mobile number">
+            <br><br>
+
+            <!-- Landline Number -->
+            <label for="landline">Landline Number:</label><br>
+            <input 
+                type="tel"
+                id="landline"
+                name="landline"
+                pattern="[0-9]{6,12}"
+                placeholder="Enter landline number">
+            <br><br>
+
+            <!-- Password -->
+            <label for="password">Password:</label><br>
+            <input 
+                type="password"
+                id="password"
+                name="password"
+                required
+                pattern="(?=.*[A-Z])(?=.*[0-9]).{8,}"
+                placeholder="Min 8 chars, 1 capital & 1 number">
+            <br><br>
+
+            <!-- Date of Birth -->
+            <label for="dob">Date of Birth:</label><br>
+            <input 
+                type="date"
+                id="dob"
+                name="dob"
+                required>
+            <br><br>
+
+            <!-- Age -->
+            <label for="age">Age:</label><br>
+            <input 
+                type="number"
+                id="age"
+                name="age"
+                required
+                min="18"
+                max="60"
+                placeholder="Enter age">
+            <br><br>
+
+            <!-- Gender -->
+            <label>Gender:</label><br>
+
+            <input type="radio" id="male" name="gender" required>
+            <label for="male">Male</label>
+
+            <input type="radio" id="female" name="gender">
+            <label for="female">Female</label>
+
+            <input type="radio" id="other" name="gender">
+            <label for="other">Other</label>
+
+            <br><br>
+
+            <!-- Address -->
+            <label for="address">Address:</label><br>
+            <textarea 
+                id="address"
+                name="address"
+                required
+                minlength="10"
+                maxlength="100"
+                placeholder="Enter address"></textarea>
+            <br><br>
+
+            <!-- City -->
+            <label for="city">City:</label><br>
+            <input 
+                type="text"
+                id="city"
+                name="city"
+                required
+                pattern="[A-Za-z ]{2,30}"
+                placeholder="Enter city name">
+            <br><br>
+
+            <!-- Pincode -->
+            <label for="pincode">Pincode:</label><br>
+            <input 
+                type="text"
+                id="pincode"
+                name="pincode"
+                required
+                pattern="[0-9]{6}"
+                placeholder="6 digit pincode">
+            <br><br>
+
+            <!-- Joining Date -->
+            <label for="joining">Joining Date:</label><br>
+            <input 
+                type="date"
+                id="joining"
+                name="joining"
+                required>
+            <br><br>
+
+            <!-- Confirmation Checkbox -->
+            <input 
+                type="checkbox"
+                id="confirm"
+                required>
+
+            <label for="confirm">
+                I confirm that the above information is correct.
+            </label>
+
+            <br><br>
+
+            <!-- Buttons -->
+            <input type="submit" value="Submit">
+
+            <input type="reset" value="Reset">
+
+        </form>
+
+    </main>
+
+    <footer>
+        <p>HTML5 Form Example</p>
+    </footer>
+
+</body>
+
+</html>

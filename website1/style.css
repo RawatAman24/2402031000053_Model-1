@@ -1,0 +1,35 @@
+*{
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      font-family: Arial;
+    }
+    header{
+      background: black;
+      color: white;
+      padding:15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo{
+      font-size:30px;
+      font-weight: bold;
+      color: orange; 
+    }
+    nav a{
+      color: white;
+      text-decoration: none;
+      margin:0 15px;
+      font-size:18px;
+    }
+    nav a:hover{
+      color: orange;
+    }
+    button{
+      background: orange;
+      border: none;
+      padding:10px 20px;
+      color: white;
+      cursor:pointer;
+    }
