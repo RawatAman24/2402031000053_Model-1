@@ -19,7 +19,7 @@
       height:100vh;
     }
     .payment-box{
-      width:350px;
+      width:380px;
       background:#fff;
       padding:30px;
       border-radius:10px;
@@ -32,7 +32,8 @@
     .input-box{
       margin-bottom:15px;
     }
-    .input-box input{
+    .input-box input,
+    .input-box select{
       width:100%;
       padding:12px;
       border:1px solid #ccc;
@@ -49,6 +50,9 @@
       border-radius:6px;
       cursor:pointer;
     }
+    .upi-box{
+      display:none;
+    }
   </style>
 </head>
 <body>
@@ -56,21 +60,52 @@
     <h2>Payment Form</h2>
     <form>
       <div class="input-box">
-        <input type="text" placeholder="Card Holder Name" required>
+        <select id="paymentMethod" onchange="showPayment()">
+          <option value="">Select Payment Method</option>
+          <option value="card">Credit/Debit Card</option>
+          <option value="upi">UPI Payment</option>
+        </select>
       </div>
-      <div class="input-box">
-        <input type="text" placeholder="Card Number" required>
+      <div id="cardBox">
+        <div class="input-box">
+          <input type="text" placeholder="Card Holder Name">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Card Number">
+        </div>
+        <div class="input-box">
+          <input type="text" placeholder="Expiry Date">
+        </div>
+        <div class="input-box">
+          <input type="password" placeholder="CVV">
+        </div>
       </div>
-      <div class="input-box">
-        <input type="text" placeholder="Expiry Date" required>
-      </div>
-      <div class="input-box">
-        <input type="password" placeholder="CVV" required>
+      <div id="upiBox" class="upi-box">
+        <div class="input-box">
+          <input type="text" placeholder="Enter UPI ID">
+        </div>
       </div>
       <button type="submit" class="pay-btn">
         Pay Now
       </button>
     </form>
   </div>
+  <script>
+    function showPayment(){
+      let method = document.getElementById("paymentMethod").value;
+      let cardBox = document.getElementById("cardBox");
+      let upiBox = document.getElementById("upiBox");
+      if(method === "upi"){
+        upiBox.style.display = "block";
+        cardBox.style.display = "none";
+      }
+      else{
+        upiBox.style.display = "none";
+        cardBox.style.display = "block";
+      }
+    }
+  </script>
+<div id="footer1"></div>
+    <script src="script.js"></script>
 </body>
 </html>
