@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <title>Login Page</title>
   <style>
     *{
@@ -14,13 +16,16 @@
       font-family:Arial, sans-serif;
     }
     body{
+      min-height:100vh;
       display:flex;
       justify-content:center;
       align-items:center;
       background:#f4f4f4;
+      padding:20px;
     }
     .login-box{
-      width:350px;
+      width:100%;
+      max-width:380px;
       background:#fff;
       padding:35px;
       border-radius:16px;
@@ -42,6 +47,10 @@
       border-radius:8px;
       outline:none;
       font-size:15px;
+      transition:0.3s;
+    }
+    .input-box input:focus{
+      border-color:orange;
     }
     .input-box i{
       position:absolute;
@@ -58,6 +67,9 @@
       text-decoration:none;
       color:#f4a000;
       font-size:14px;
+    }
+    .forgot a:hover{
+      text-decoration:underline;
     }
     .login-btn{
       width:100%;
@@ -78,40 +90,47 @@
       text-align:center;
       margin-top:20px;
       font-size:14px;
+      color:#555;
     }
     .signup a{
       text-decoration:none;
       color:#f4a000;
       font-weight:bold;
     }
+    .signup a:hover{
+      text-decoration:underline;
+    }
   </style>
 </head>
 <body>
-  <div id="header1"></div><br><br>
   <div class="login-box">
     <h2>Login</h2>
-    <form>
+    <form action="Home.html">
       <div class="input-box">
-        <input type="email" placeholder="Email Address" required>
+        <input type="email"
+          placeholder="Email Address"
+          required>
         <i class="fa-solid fa-envelope"></i>
       </div>
       <div class="input-box">
-        <input type="password" placeholder="Password" required>
+        <input type="password"
+          placeholder="Password"
+          required>
         <i class="fa-solid fa-lock"></i>
       </div>
       <div class="forgot">
-        <a href="#">Forgot Password?</a>
+        <a href="forgot.html">Forgot Password?</a>
       </div>
       <button type="submit" class="login-btn">
         Login
       </button>
       <div class="signup">
         Don't have an account?
-        <a href="#">Register</a>
+        <a href="register.html">Register</a>
       </div>
     </form>
   </div>
   <div id="footer1"></div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
