@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Form</title>
+  <title> Payment Form </title>
   <style>
     *{
       margin:0;
@@ -16,10 +16,11 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      height:100vh;
+      min-height:100vh;
+      padding:20px;
     }
     .payment-box{
-      width:380px;
+      width:400px;
       background:#fff;
       padding:30px;
       border-radius:10px;
@@ -28,6 +29,7 @@
     .payment-box h2{
       text-align:center;
       margin-bottom:20px;
+      color:#222;
     }
     .input-box{
       margin-bottom:15px;
@@ -39,6 +41,7 @@
       border:1px solid #ccc;
       border-radius:5px;
       outline:none;
+      font-size:15px;
     }
     .pay-btn{
       width:100%;
@@ -49,26 +52,48 @@
       font-size:16px;
       border-radius:6px;
       cursor:pointer;
+      transition:0.3s;
+    }
+    .pay-btn:hover{
+      background:darkorange;
+      color:#fff;
     }
     .upi-box{
       display:none;
+    }
+    .receipt{
+      display:none;
+      margin-top:20px;
+      padding:20px;
+      border:1px solid #ddd;
+      border-radius:10px;
+      background:#fafafa;
+    }
+    .receipt h3{
+      text-align:center;
+      margin-bottom:15px;
+      color:green;
+    }
+    .receipt p{
+      margin:8px 0;
+      color:#333;
     }
   </style>
 </head>
 <body>
   <div class="payment-box">
-    <h2>Payment Form</h2>
-    <form>
+    <h2> Payment Form </h2>
+    <form id="paymentForm">
       <div class="input-box">
-        <select id="paymentMethod" onchange="showPayment()">
+        <select id="paymentMethod" onchange="showPayment()" required>
           <option value="">Select Payment Method</option>
-          <option value="card">Credit/Debit Card</option>
-          <option value="upi">UPI Payment</option>
+          <option value="card"> Credit / Debit Card </option>
+          <option value="upi"> UPI Payment </option>
         </select>
       </div>
       <div id="cardBox">
         <div class="input-box">
-          <input type="text" placeholder="Card Holder Name">
+          <input type="text" id="cardName" placeholder="Card Holder Name">
         </div>
         <div class="input-box">
           <input type="text" placeholder="Card Number">
@@ -82,13 +107,29 @@
       </div>
       <div id="upiBox" class="upi-box">
         <div class="input-box">
-          <input type="text" placeholder="Enter UPI ID">
+          <input type="text" id="upiId" placeholder="Enter UPI ID">
         </div>
       </div>
-      <button type="submit" class="pay-btn">
-        Pay Now
-      </button>
+      <div class="input-box">
+        <input type="text" id="amount" value="₹3,599" readonly>
+      </div>
+      <button type="submit" class="pay-btn"> Pay Now </button>
     </form>
+    <div class="receipt" id="receipt">
+      <h3> Payment Successful ✅</h3>
+      <p><strong>Receipt No:</strong>
+        <span id="receiptNo"></span>
+      </p>
+      <p><strong>Payment Method:</strong>
+        <span id="receiptMethod"></span>
+      </p>
+      <p><strong>Amount Paid:</strong>
+        <span id="receiptAmount"></span>
+      </p>
+      <p><strong>Date:</strong>
+        <span id="receiptDate"></span>
+      </p>
+    </div>
   </div>
   <script>
     function showPayment(){
@@ -98,14 +139,25 @@
       if(method === "upi"){
         upiBox.style.display = "block";
         cardBox.style.display = "none";
-      }
-      else{
+      }else{
         upiBox.style.display = "none";
         cardBox.style.display = "block";
       }
     }
+    document.getElementById("paymentForm")
+    .addEventListener("submit", function(e){
+      e.preventDefault();
+      let method = document.getElementById("paymentMethod").value;
+      let amount = document.getElementById("amount").value;
+      let receiptNo = "REC" + Math.floor(Math.random()*100000);
+      let date = new Date().toLocaleString();
+      document.getElementById("receipt").style.display = "block";
+      document.getElementById("receiptNo").innerText = receiptNo;
+      document.getElementById("receiptMethod").innerText = method.toUpperCase();
+      document.getElementById("receiptAmount").innerText = amount;
+      document.getElementById("receiptDate").innerText = date;
+      alert("Payment Completed Successfully!");
+    });
   </script>
-<div id="footer1"></div>
-    <script src="script.js"></script>
 </body>
 </html>

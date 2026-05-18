@@ -2,33 +2,37 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Card Design</title>
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <title> Card Design</title>
   <style>
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
-      font-family:Arial;
+      font-family:Arial, sans-serif;
     }
     body{
       background:#f4f4f4;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
+      padding:40px;
+    }
+    .card-container{
+      display:grid;
+      grid-template-columns:
+      repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
     }
     .card{
-      width:300px;
       background:#fff;
-      border-radius:10px;
+      border-radius:12px;
       overflow:hidden;
       box-shadow:0 5px 15px rgba(0,0,0,0.1);
       text-align:center;
+      padding-bottom:20px;
     }
     .card img{
       width:100%;
-      height:200px;
+      height:220px;
       object-fit:cover;
     }
     .card-content{
@@ -42,38 +46,96 @@
       color:#555;
       margin-bottom:15px;
     }
-    .card-content a{
+    .price{
+      font-size:20px;
+      color:green;
+      font-weight:bold;
+      margin-bottom:15px;
+    }
+    .btn-box{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:10px;
+    }
+    .buy-btn,
+    .cart-btn{
       text-decoration:none;
-      background:orange;
-      color:#000;
-      padding:10px 20px;
-      border-radius:5px;
+      padding:10px 18px;
+      border-radius:6px;
       display:inline-block;
+      transition:0.3s;
+      color:#fff;
+      font-size:14px;
+    }
+    .buy-btn{
+      background:orange;
+    }
+    .buy-btn:hover{
+      background:darkorange;
+    }
+    .cart-btn{
+      background:#222;
+    }
+    .cart-btn:hover{
+      background:#444;
     }
   </style>
 </head>
-<div id="header1"></div><br><br>
 <body>
+  <div id="header1"></div>
+  <br><br>
+  <div class="card-container">
     <div class="card">
-    <img src="shopping (2).webp" alt="Product">
-    <div class="card-content">
-      <h3> Product Title </h3>
-      <p>
-        Stylish and modern product design with premium quality.
-      </p>
-      <a href="Payment.html">Buy Now</a>
+      <img src="shopping (1).webp" alt="Product">
+      <div class="card-content">
+        <h3>Boots</h3>
+        <p> Stylish and modern boot with premium quality. </p>
+        <div class="price">₹3,599</div>
+        <div class="btn-box">
+          <a href="payment.html" class="buy-btn"> Buy Now </a>
+          <a href="Card.html" class="cart-btn"> Add to Cart </a>
+        </div>
+      </div>
     </div>
     <div class="card">
-    <img src="shopping (3).webp" alt="Product">
-    <div class="card-content">
-      <h3> Product Title </h3>
-      <p>
-        Stylish and modern product design with premium quality.
-      </p>
-      <a href="Payment.html">Buy Now</a>
+      <img src="shopping (2).webp" alt="Product">
+      <div class="card-content">
+        <h3>Boots</h3>
+        <p> Hitz Men's Lace-up Ankle Boot. </p>
+        <div class="price">₹4,599</div>
+        <div class="btn-box">
+          <a href="payment.html" class="buy-btn"> Buy Now </a>
+          <a href="Card.html" class="cart-btn"> Add to Cart </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="shopping (3).webp" alt="Product">
+      <div class="card-content">
+        <h3>Luxury Boots</h3>
+        <p> Vellinto Men's Stony Casual. </p>
+        <div class="price">₹3,999</div>
+        <div class="btn-box">
+          <a href="payment.html" class="buy-btn"> Buy Now </a>
+          <a href="Card.html" class="cart-btn"> Add to Cart </a>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <img src="shopping (4).webp" alt="Product">
+      <div class="card-content">
+        <h3>Premium Boots</h3>
+        <p> Stylish leather boots for men. </p>
+        <div class="price">₹4,799</div>
+        <div class="btn-box">
+          <a href="payment.html" class="buy-btn"> Buy Now </a>
+          <a href="Card.html" class="cart-btn"> Add to Cart </a>
+        </div>
+      </div>
     </div>
   </div>
   <div id="footer1"></div>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
