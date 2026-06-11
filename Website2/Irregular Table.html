@@ -1,46 +1,51 @@
-<!DOCTYPE html>
+<!DOCTYPE hmtl>
 <html>
-<head>
-<style>
-    table {
-        border-collapse: collapse;
-        width: 80%;
-        text-align: center;
-    }
-    td {
-        border: 1px solid black;
-        padding: 10px;
-    }
-</style>
-</head>
-<body>
-<table>
-  <tr>
-    <td colspan="3">A</td>
-    <td colspan="7">B</td>
-  </tr>
-  <tr>
-    <td colspan="2">C</td>
-    <td colspan="2">D</td>
-    <td>E</td>
-    <td>F</td>
-    <td colspan="2">G</td>
-    <td>H</td>
-    <td rowspan="2">J</td>
-  </tr>
-  <tr>
-    <td colspan="3" rowspan="2">K</td>
-    <td colspan="2">M</td>
-    <td colspan="2">N</td>
-    <td colspan="2">I</td>
-  </tr>
-  <tr>
-    <td>L</td>
-    <td>P</td>
-    <td>Q</td>
-    <td colspan="2">I</td>
-    <td>H</td>
-  </tr>
-</table>
-</body>
-</html>
+    <head>
+        <title>SVG & Table Pattern</title>
+        <style>
+            table {
+                border-collapse: collapse;
+                width: 700px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>SVG Star :</h3><br>
+        <svg width="200" height="200">
+            <polygon
+                points="100,10 120,70 190,70 135,110 155,180 100,140 45,180 65,110 10,70 80,70" fill="gold" stroke="black" stroke-width="3">
+            </polygon>
+        </svg>
+
+        <h3>Table Pattern</h3>
+        <table border="3px">
+            <tr>
+                <td colspan="2">A</td>
+                <td colspan="5">B</td>
+            </tr>
+            <tr>
+                <td colspan="1">C</td>
+                <td colspan="1">D</td>
+                <td colspan="1">E</td>
+                <td colspan="1">F</td>
+                <td colspan="1">G</td>
+                <td colspan="1">H</td>
+                <td rowspan="3">J</td>
+            </tr>
+            <tr>
+                <td rowspan="2">K</td>
+                <td >M</td>
+                <td colspan="2">N</td>
+                <td colspan="2">I</td>
+            </tr>
+            <tr>
+                <td>L</td>
+                <td>P</td>
+                <td>Q</td>
+                <td>I</td>
+                <td>H</td>
+            </tr>
+        </table>
+    </body>
+</html>    
